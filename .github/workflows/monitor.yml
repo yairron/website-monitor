@@ -37,8 +37,8 @@ jobs:
         json.dump(config, open('config.json', 'w'), indent=2)
         "
     
-    - name: Run website monitor
-      run: python website_monitor.py
+    - name: Test email
+      run: python test_email.py
         
     - name: Commit and push changes
       run: |
