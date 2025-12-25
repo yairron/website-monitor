@@ -141,9 +141,6 @@ class WebsiteMonitor:
             msg.attach(html_part)
             
             # שליחת המייל
-                        # שליחת המייל
-           # שליחת המייל
-        try:
             server = smtplib.SMTP(email_config['smtp_server'], email_config['smtp_port'])
             server.starttls()
             server.login(email_config['from_email'], email_config['password'])
