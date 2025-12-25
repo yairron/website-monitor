@@ -141,17 +141,21 @@ class WebsiteMonitor:
             msg.attach(html_part)
             
             # שליחת המייל
-            with smtplib.SMTP(email_config['smtp_server'], email_config['smtp_port']) as server:
-                server.starttls()
-                server.login(email_config['from_email'], email_config['password'])
-                server.send_message(msg)
+                        # שליחת המייל
+           # שליחת המייל
+        try:
+            server = smtplib.SMTP(email_config['smtp_server'], email_config['smtp_port'])
+            server.starttls()
+            server.login(email_config['from_email'], email_config['password'])
+            server.send_message(msg)
+            server.quit()
             
             print(f"✓ התראה נשלחה ל-{email_config['to_email']}")
             
         except Exception as e:
             print(f"שגיאה בשליחת מייל: {e}")
-    
-    def check_site(self, site):
+            
+def check_site(self, site):
         """בדיקת אתר בודד"""
         site_name = site['name']
         url = site['url']
