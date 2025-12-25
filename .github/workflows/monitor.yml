@@ -23,7 +23,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         
-    - name: Run website monitor
+    - name: Update config from secrets
       env:
         EMAIL_ENABLED: ${{ secrets.EMAIL_ENABLED }}
         SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
@@ -32,7 +32,7 @@ jobs:
         EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
         TO_EMAIL: ${{ secrets.TO_EMAIL }}
       run: |
-        python -c "
+        python << 'PYTHON_SCRIPT'
 import json
 import os
 with open('config.json', 'r', encoding='utf-8') as f:
@@ -45,9 +45,10 @@ config['email']['password'] = os.getenv('EMAIL_PASSWORD', '')
 config['email']['to_email'] = os.getenv('TO_EMAIL', '')
 with open('config.json', 'w', encoding='utf-8') as f:
     json.dump(config, f, ensure_ascii=False, indent=2)
-print('Email config updated from secrets')
-        "
-        python website_monitor.py
+PYTHON_SCRIPT
+    
+    - name: Run website monitor
+      run: python website_monitor.py
         
     - name: Commit and push changes
       run: |
