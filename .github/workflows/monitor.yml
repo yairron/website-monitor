@@ -24,28 +24,18 @@ jobs:
         pip install -r requirements.txt
         
     - name: Update config from secrets
-      env:
-        EMAIL_ENABLED: ${{ secrets.EMAIL_ENABLED }}
-        SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-        SMTP_PORT: ${{ secrets.SMTP_PORT }}
-        FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        TO_EMAIL: ${{ secrets.TO_EMAIL }}
       run: |
-        python << 'PYTHON_SCRIPT'
-import json
-import os
-with open('config.json', 'r', encoding='utf-8') as f:
-    config = json.load(f)
-config['email']['enabled'] = os.getenv('EMAIL_ENABLED', 'false').lower() == 'true'
-config['email']['smtp_server'] = os.getenv('SMTP_SERVER', 'smtp.gmail.com')
-config['email']['smtp_port'] = int(os.getenv('SMTP_PORT', '587'))
-config['email']['from_email'] = os.getenv('FROM_EMAIL', '')
-config['email']['password'] = os.getenv('EMAIL_PASSWORD', '')
-config['email']['to_email'] = os.getenv('TO_EMAIL', '')
-with open('config.json', 'w', encoding='utf-8') as f:
-    json.dump(config, f, ensure_ascii=False, indent=2)
-PYTHON_SCRIPT
+        python -c "
+        import json
+        config = json.load(open('config.json', 'r'))
+        config['email']['enabled'] = '${{ secrets.EMAIL_ENABLED }}' == 'true'
+        config['email']['smtp_server'] = '${{ secrets.SMTP_SERVER }}'
+        config['email']['smtp_port'] = int('${{ secrets.SMTP_PORT }}')
+        config['email']['from_email'] = '${{ secrets.FROM_EMAIL }}'
+        config['email']['password'] = '${{ secrets.EMAIL_PASSWORD }}'
+        config['email']['to_email'] = '${{ secrets.TO_EMAIL }}'
+        json.dump(config, open('config.json', 'w'), indent=2)
+        "
     
     - name: Run website monitor
       run: python website_monitor.py
