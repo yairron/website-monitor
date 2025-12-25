@@ -1,0 +1,106 @@
+{
+  "sites": [
+    {
+      "name": "עדכון_קצבאות",
+      "url": "http://www.btl.gov.il/Publications/benefits_update/Pages/default.aspx",
+      "keywords": [
+        "עדכון",
+        "שינוי",
+        "קצבה",
+        "זקנה",
+        "סיעוד",
+        "נכות",
+        "השלמת הכנסה",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "name": "אזרחים_ותיקים",
+      "url": "http://www.btl.gov.il/ZcuyotAsdience/EzracimVatikim/Pages/default.aspx",
+      "keywords": [
+        "זכויות",
+        "קצבה",
+        "הטבה",
+        "עדכון",
+        "חדש"
+      ]
+    },
+    {
+      "name": "קצבת_זקנה",
+      "url": "http://www.btl.gov.il/benefits/old_age/Pages/default.aspx",
+      "keywords": [
+        "סכום",
+        "תוספת",
+        "השלמת הכנסה",
+        "שינוי",
+        "עדכון",
+        "זכאות"
+      ]
+    },
+    {
+      "name": "גובה_קצבאות_2025",
+      "url": "https://www.btl.gov.il/About/newspapers/Pages/GovaKizbeot2025.aspx",
+      "keywords": [
+        "העלאה",
+        "שינוי",
+        "סכום",
+        "2025",
+        "2026"
+      ]
+    },
+    {
+      "name": "חדשות_ביטוח_לאומי",
+      "url": "http://www.btl.gov.il/About/news/Pages/default.aspx",
+      "keywords": [
+        "אזרחים ותיקים",
+        "זקנה",
+        "קצבה",
+        "רפורמה",
+        "שינוי",
+        "חדש"
+      ]
+    },
+    {
+      "name": "שינויים_נכות",
+      "url": "http://www.btl.gov.il/benefits/Disability/Pages/hodaaAlShinuim.aspx",
+      "keywords": [
+        "נכות",
+        "אזרח ותיק",
+        "שינוי",
+        "עדכון"
+      ]
+    },
+    {
+      "name": "שינויים_הבטחת_הכנסה",
+      "url": "http://www.btl.gov.il/benefits/Income_support/Pages/שינויים.aspx",
+      "keywords": [
+        "מבחן הכנסה",
+        "נכסים",
+        "זכאות",
+        "שינוי"
+      ]
+    },
+    {
+      "name": "לוח_תשלומים",
+      "url": "http://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx",
+      "keywords": [
+        "מועד",
+        "תשלום",
+        "שינוי",
+        "הקדמה"
+      ]
+    }
+  ],
+  "email": {
+    "enabled": false,
+    "smtp_server": "smtp.gmail.com",
+    "smtp_port": 587,
+    "from_email": "your_email@gmail.com",
+    "password": "your_app_password",
+    "to_email": "recipient@example.com"
+  },
+  "check_interval_hours": 24,
+  "save_history": true,
+  "max_history_files": 30
+}
