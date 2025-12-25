@@ -24,34 +24,11 @@ jobs:
         pip install -r requirements.txt
         
     - name: Run website monitor
-      env:
-        EMAIL_ENABLED: ${{ secrets.EMAIL_ENABLED }}
-        SMTP_SERVER: ${{ secrets.SMTP_SERVER }}
-        SMTP_PORT: ${{ secrets.SMTP_PORT }}
-        FROM_EMAIL: ${{ secrets.FROM_EMAIL }}
-        EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-        TO_EMAIL: ${{ secrets.TO_EMAIL }}
-      run: |
-        if [ ! -z "$EMAIL_ENABLED" ]; then
-          python -c "
-import json
-with open('config.json', 'r', encoding='utf-8') as f:
-    config = json.load(f)
-config['email']['enabled'] = '$EMAIL_ENABLED' == 'true'
-config['email']['smtp_server'] = '$SMTP_SERVER'
-config['email']['smtp_port'] = int('$SMTP_PORT') if '$SMTP_PORT' else 587
-config['email']['from_email'] = '$FROM_EMAIL'
-config['email']['password'] = '$EMAIL_PASSWORD'
-config['email']['to_email'] = '$TO_EMAIL'
-with open('config.json', 'w', encoding='utf-8') as f:
-    json.dump(config, f, ensure_ascii=False, indent=2)
-"
-        fi
-        python website_monitor.py
+      run: python website_monitor.py
         
     - name: Commit and push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add history/
-        git diff --quiet && git diff --staged --quiet || (git commit -m "עדכון היסטוריית מעקב - $(date +'%Y-%m-%d %H:%M:%S')" && git push)
+        git add history/ || true
+        git diff --quiet && git diff --staged --quiet || (git commit -m "עדכון - $(date +'%Y-%m-%d')" && git push) || true
