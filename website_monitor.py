@@ -241,9 +241,14 @@ class WebsiteMonitor:
 if __name__ == "__main__":
     monitor = WebsiteMonitor()
     
+    # טען מחדש את ההגדרות
+    monitor.config = monitor.load_config()
+    
     print("שולח מייל בדיקה...")
+    print(f"Email enabled: {monitor.config.get('email', {}).get('enabled', False)}")
+    
     monitor.send_email_alert(
-        subject="בדיקת מערכת מעקב - הכל עובד!",
+        subject="🧪 בדיקת מערכת מעקב - הכל עובד!",
         body="זהו מייל בדיקה. אם קיבלת מייל זה - המערכת עובדת מצוין!"
     )
     print("מייל נשלח!")
