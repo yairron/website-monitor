@@ -119,7 +119,6 @@ class WebsiteMonitor:
             msg['From'] = email_config['from_email']
             msg['To'] = email_config['to_email']
             
-            # יצירת גרסת HTML
             html_body = f"""
             <html dir="rtl">
             <head>
@@ -140,7 +139,6 @@ class WebsiteMonitor:
             msg.attach(text_part)
             msg.attach(html_part)
             
-            # שליחת המייל
             server = smtplib.SMTP(email_config['smtp_server'], email_config['smtp_port'])
             server.starttls()
             server.login(email_config['from_email'], email_config['password'])
@@ -151,8 +149,8 @@ class WebsiteMonitor:
             
         except Exception as e:
             print(f"שגיאה בשליחת מייל: {e}")
-            
-def check_site(self, site):
+    
+    def check_site(self, site):
         """בדיקת אתר בודד"""
         site_name = site['name']
         url = site['url']
@@ -162,20 +160,16 @@ def check_site(self, site):
         print(f"בודק: {site_name}")
         print(f"כתובת: {url}")
         
-        # שליפת התוכן
         html = self.fetch_page(url)
         if not html:
             return
         
-        # חילוץ טקסט רלוונטי
         current_content = self.extract_relevant_text(html, keywords)
         current_hash = self.get_content_hash(current_content)
         
-        # טעינת תוכן קודם
         previous_content = self.load_previous_content(site_name)
         
         if previous_content is None:
-            # ריצה ראשונה
             self.save_content(site_name, current_content)
             print(f"✓ תוכן ראשוני נשמר עבור {site_name}")
             return
@@ -183,16 +177,12 @@ def check_site(self, site):
         previous_hash = self.get_content_hash(previous_content)
         
         if current_hash != previous_hash:
-            # נמצא שינוי!
             print(f"🔔 נמצא שינוי באתר: {site_name}")
             
-            # יצירת דוח הבדלים
             diff = self.generate_diff(previous_content, current_content, site_name)
             
-            # שמירת תוכן חדש
             self.save_content(site_name, current_content)
             
-            # שליחת התראה
             subject = f"🔔 שינוי זוהה: {site_name}"
             body = f"""זוהה שינוי באתר: {site_name}
 כתובת: {url}
@@ -206,7 +196,6 @@ def check_site(self, site):
             
             self.send_email_alert(subject, body)
             
-            # שמירת דוח
             report_file = self.history_dir / f"report_{site_name}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.txt"
             report_file.write_text(diff, encoding='utf-8')
             
@@ -241,17 +230,4 @@ def check_site(self, site):
 
 if __name__ == "__main__":
     monitor = WebsiteMonitor()
-    
-    # טען מחדש את ההגדרות
-    monitor.config = monitor.load_config()
-    
-    print("שולח מייל בדיקה...")
-    print(f"Email enabled: {monitor.config.get('email', {}).get('enabled', False)}")
-    
-    monitor.send_email_alert(
-        subject="🧪 בדיקת מערכת מעקב - הכל עובד!",
-        body="זהו מייל בדיקה. אם קיבלת מייל זה - המערכת עובדת מצוין!"
-    )
-    print("מייל נשלח!")
-    
     monitor.run()
