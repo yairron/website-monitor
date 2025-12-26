@@ -1,94 +1,94 @@
 {
   "sites": [
     {
-      "name": "\u05e2\u05d3\u05db\u05d5\u05df_\u05e7\u05e6\u05d1\u05d0\u05d5\u05ea",
+      "name": "עדכון_קצבאות",
       "url": "http://www.btl.gov.il/Publications/benefits_update/Pages/default.aspx",
       "keywords": [
-        "\u05e2\u05d3\u05db\u05d5\u05df",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05e7\u05e6\u05d1\u05d4",
-        "\u05d6\u05e7\u05e0\u05d4",
-        "\u05e1\u05d9\u05e2\u05d5\u05d3",
-        "\u05e0\u05db\u05d5\u05ea",
-        "\u05d4\u05e9\u05dc\u05de\u05ea \u05d4\u05db\u05e0\u05e1\u05d4",
+        "עדכון",
+        "שינוי",
+        "קצבה",
+        "זקנה",
+        "סיעוד",
+        "נכות",
+        "השלמת הכנסה",
         "2025",
         "2026"
       ]
     },
     {
-      "name": "\u05d0\u05d6\u05e8\u05d7\u05d9\u05dd_\u05d5\u05ea\u05d9\u05e7\u05d9\u05dd",
+      "name": "אזרחים_ותיקים",
       "url": "http://www.btl.gov.il/ZcuyotAsdience/EzracimVatikim/Pages/default.aspx",
       "keywords": [
-        "\u05d6\u05db\u05d5\u05d9\u05d5\u05ea",
-        "\u05e7\u05e6\u05d1\u05d4",
-        "\u05d4\u05d8\u05d1\u05d4",
-        "\u05e2\u05d3\u05db\u05d5\u05df",
-        "\u05d7\u05d3\u05e9"
+        "זכויות",
+        "קצבה",
+        "הטבה",
+        "עדכון",
+        "חדש"
       ]
     },
     {
-      "name": "\u05e7\u05e6\u05d1\u05ea_\u05d6\u05e7\u05e0\u05d4",
+      "name": "קצבת_זקנה",
       "url": "http://www.btl.gov.il/benefits/old_age/Pages/default.aspx",
       "keywords": [
-        "\u05e1\u05db\u05d5\u05dd",
-        "\u05ea\u05d5\u05e1\u05e4\u05ea",
-        "\u05d4\u05e9\u05dc\u05de\u05ea \u05d4\u05db\u05e0\u05e1\u05d4",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05e2\u05d3\u05db\u05d5\u05df",
-        "\u05d6\u05db\u05d0\u05d5\u05ea"
+        "סכום",
+        "תוספת",
+        "השלמת הכנסה",
+        "שינוי",
+        "עדכון",
+        "זכאות"
       ]
     },
     {
-      "name": "\u05d2\u05d5\u05d1\u05d4_\u05e7\u05e6\u05d1\u05d0\u05d5\u05ea_2025",
+      "name": "גובה_קצבאות_2025",
       "url": "https://www.btl.gov.il/About/newspapers/Pages/GovaKizbeot2025.aspx",
       "keywords": [
-        "\u05d4\u05e2\u05dc\u05d0\u05d4",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05e1\u05db\u05d5\u05dd",
+        "העלאה",
+        "שינוי",
+        "סכום",
         "2025",
         "2026"
       ]
     },
     {
-      "name": "\u05d7\u05d3\u05e9\u05d5\u05ea_\u05d1\u05d9\u05d8\u05d5\u05d7_\u05dc\u05d0\u05d5\u05de\u05d9",
+      "name": "חדשות_ביטוח_לאומי",
       "url": "http://www.btl.gov.il/About/news/Pages/default.aspx",
       "keywords": [
-        "\u05d0\u05d6\u05e8\u05d7\u05d9\u05dd \u05d5\u05ea\u05d9\u05e7\u05d9\u05dd",
-        "\u05d6\u05e7\u05e0\u05d4",
-        "\u05e7\u05e6\u05d1\u05d4",
-        "\u05e8\u05e4\u05d5\u05e8\u05de\u05d4",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05d7\u05d3\u05e9"
+        "אזרחים ותיקים",
+        "זקנה",
+        "קצבה",
+        "רפורמה",
+        "שינוי",
+        "חדש"
       ]
     },
     {
-      "name": "\u05e9\u05d9\u05e0\u05d5\u05d9\u05d9\u05dd_\u05e0\u05db\u05d5\u05ea",
+      "name": "שינויים_נכות",
       "url": "http://www.btl.gov.il/benefits/Disability/Pages/hodaaAlShinuim.aspx",
       "keywords": [
-        "\u05e0\u05db\u05d5\u05ea",
-        "\u05d0\u05d6\u05e8\u05d7 \u05d5\u05ea\u05d9\u05e7",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05e2\u05d3\u05db\u05d5\u05df"
+        "נכות",
+        "אזרח ותיק",
+        "שינוי",
+        "עדכון"
       ]
     },
     {
-      "name": "\u05e9\u05d9\u05e0\u05d5\u05d9\u05d9\u05dd_\u05d4\u05d1\u05d8\u05d7\u05ea_\u05d4\u05db\u05e0\u05e1\u05d4",
-      "url": "http://www.btl.gov.il/benefits/Income_support/Pages/\u05e9\u05d9\u05e0\u05d5\u05d9\u05d9\u05dd.aspx",
+      "name": "שינויים_הבטחת_הכנסה",
+      "url": "http://www.btl.gov.il/benefits/Income_support/Pages/שינויים.aspx",
       "keywords": [
-        "\u05de\u05d1\u05d7\u05df \u05d4\u05db\u05e0\u05e1\u05d4",
-        "\u05e0\u05db\u05e1\u05d9\u05dd",
-        "\u05d6\u05db\u05d0\u05d5\u05ea",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9"
+        "מבחן הכנסה",
+        "נכסים",
+        "זכאות",
+        "שינוי"
       ]
     },
     {
-      "name": "\u05dc\u05d5\u05d7_\u05ea\u05e9\u05dc\u05d5\u05de\u05d9\u05dd",
+      "name": "לוח_תשלומים",
       "url": "http://www.btl.gov.il/Pages/BenefitsPaymentDates.aspx",
       "keywords": [
-        "\u05de\u05d5\u05e2\u05d3",
-        "\u05ea\u05e9\u05dc\u05d5\u05dd",
-        "\u05e9\u05d9\u05e0\u05d5\u05d9",
-        "\u05d4\u05e7\u05d3\u05de\u05d4"
+        "מועד",
+        "תשלום",
+        "שינוי",
+        "הקדמה"
       ]
     }
   ],
